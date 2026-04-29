@@ -2,11 +2,18 @@
   "name": "easy-interview",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": ">=24.13.1",
+    "yarn": ">=1.22.22",
+    "npm": "please-use-yarn"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "prettier": "prettier . --write",
+    "prepare": "husky"
   },
   "dependencies": {
     "next": "16.2.4",
@@ -20,6 +27,11 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.2.4",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.5",
+    "eslint-plugin-react": "^7.37.5",
+    "husky": "^9.1.7",
+    "prettier": "^3.8.3",
     "tailwindcss": "^4",
     "typescript": "^5"
   }
