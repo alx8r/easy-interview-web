@@ -1,0 +1,10 @@
+{
+  "buttons": {
+    "singIn": "Sign In",
+    "singUp": "Sign Up"
+  },
+  "tabs": {
+    "singIn": "Sign In",
+    "singUp": "Sign Up"
+  }
+}

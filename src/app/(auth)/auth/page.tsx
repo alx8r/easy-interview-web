@@ -1,7 +1,10 @@
 import SignInForm from 'modules/sign-in-form';
 import { Surface, Tabs } from '@heroui/react';
+import { getTranslations } from 'next-intl/server';
 
 export default async function AuthPage() {
+  const t = await getTranslations('tabs');
+
   return (
     <div className="min-h-screen flex justify-center items-center bg-background">
       <Surface
@@ -12,11 +15,11 @@ export default async function AuthPage() {
           <Tabs.ListContainer>
             <Tabs.List aria-label="Options">
               <Tabs.Tab id="sign-in">
-                Sing In
+                {t('singIn')}
                 <Tabs.Indicator />
               </Tabs.Tab>
               <Tabs.Tab id="sign-up">
-                Sing Up
+                {t('singUp')}
                 <Tabs.Indicator />
               </Tabs.Tab>
             </Tabs.List>

@@ -1,36 +1,68 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+### Init Project
 
-## Getting Started
-
-First, run the development server:
+To init new project you should run the following cmd.
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npx create-next-app@latest my-app --yes
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Additional information: https://nextjs.org/docs/app/getting-started/installation
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Add node.js files
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+node -v > .nvmrc
+```
 
-## Learn More
+```bash
+echo engine-strict=true > .npmrc
+```
 
-To learn more about Next.js, take a look at the following resources:
+Open package.json and past “engines” before “scripts”:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```json
+"engines": {
+  "node": ">=<your_version>",
+  "yarn": ">=<your_version>",
+  "npm": "please-use-yarn"
+},
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Eslint, prettier and husky
 
-## Deploy on Vercel
+#### Eslint
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Use default configuration file of eslint (eslint.config.mjs)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Copy eslint.config.mjs to your project
+
+#### Prettier
+
+```bash
+yarn add -D prettier eslint-config-prettier
+```
+
+Copy .prettierrc and .prettierignore to your project
+
+#### Husky
+
+```bash
+yarn add -D husky
+```
+
+How to add pre-commit commands to husky you can find here: https://typicode.github.io/husky/get-started.html
+
+### Package.json
+
+```json
+  "lint": "next lint",
+  "prettier": "prettier . --write"
+```
+
+### I18n (next-intl)
+
+```bash
+npm install next-intl
+```
+
+How to add new language and use i18n you can find here: https://next-intl.dev/docs/getting-started

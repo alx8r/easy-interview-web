@@ -10,7 +10,7 @@ const eslintConfig = defineConfig([
   {
     rules: {
       /**
-       * Общие правила качества кода
+       * Common rules
        */
       'no-console': ['warn', { allow: ['warn', 'error'] }],
       'no-debugger': 'warn',
