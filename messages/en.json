@@ -1,10 +1,20 @@
 {
+  "inputLabels": {
+    "email": "Email",
+    "password": "Password",
+    "confirmPassword": "Confirm password"
+  },
+  "inputPlaceholders": {
+    "email": "Enter your email",
+    "password": "Enter password",
+    "confirmPassword": "Confirm password"
+  },
   "buttons": {
-    "singIn": "Sign In",
-    "singUp": "Sign Up"
+    "signIn": "Sign In",
+    "signUp": "Sign Up"
   },
   "tabs": {
-    "singIn": "Sign In",
-    "singUp": "Sign Up"
+    "signIn": "Sign In",
+    "signUp": "Sign Up"
   }
 }
