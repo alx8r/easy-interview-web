@@ -9,6 +9,14 @@
     "password": "Enter password",
     "confirmPassword": "Confirm password"
   },
+  "inputErrors": {
+    "emailIsRequired": "Email is required",
+    "emailInvalidFormat": "Invalid email format",
+    "passwordIsRequired": "Password is required",
+    "passwordMin": "Password min length is {min} symboles",
+    "confirmPasswordIsRequired": "Confirm password is required",
+    "passwordsMustMatch": "Passwords must match"
+  },
   "buttons": {
     "signIn": "Sign In",
     "signUp": "Sign Up"

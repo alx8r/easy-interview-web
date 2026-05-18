@@ -21,10 +21,10 @@ export default async function AuthPage() {
               </Tabs.Tab>
             </Tabs.List>
           </Tabs.ListContainer>
-          <Tabs.Panel className="min-h-75 h-75 pt-4" id="sign-in">
+          <Tabs.Panel className="min-h-75 h-85 pt-4" id="sign-in">
             <SignInForm />
           </Tabs.Panel>
-          <Tabs.Panel className="min-h-75 h-75 pt-4" id="sign-up">
+          <Tabs.Panel className="min-h-75 h-85 pt-4" id="sign-up">
             <SignUpForm />
           </Tabs.Panel>
         </Tabs>
