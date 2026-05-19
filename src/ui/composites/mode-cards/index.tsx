@@ -1,7 +1,7 @@
 'use client';
 
-import { ModeCard } from "@/src/ui/components";
-import { MODES, ModeType } from "@/src/common/data/modes";
+import { ModeCard } from "@//ui/components";
+import { MODES, ModeType } from "@//common/data/modes";
 
 
 

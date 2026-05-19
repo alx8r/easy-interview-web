@@ -1,4 +1,4 @@
-import { TFunction } from '@/src/i18n/types';
+import { TFunction } from '@//i18n/types';
 import * as yup from 'yup';
 
 export const signInFormSchema = (t: TFunction) =>

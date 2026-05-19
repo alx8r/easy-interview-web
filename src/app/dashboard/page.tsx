@@ -1,4 +1,4 @@
-import { ModeCards } from '@/src/ui/composites';
+import { ModeCards } from '@//ui/composites';
 
 export default function Dashboard() {
   return (

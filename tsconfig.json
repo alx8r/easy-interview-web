@@ -19,8 +19,9 @@
       }
     ],
     "paths": {
-      "@/*": ["./*"],
+      "@/*": ["./src/*"],
       "data/*": ["./src/common/data/*"],
+      "store/*": ["./src/store/*"],
       "components/*": ["./src/ui/components/*"],
       "composites/*": ["./src/ui/composites/*"],
       "modules/*": ["./src/ui/modules/*"]

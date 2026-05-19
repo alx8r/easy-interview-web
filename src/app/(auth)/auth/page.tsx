@@ -1,4 +1,4 @@
-import { SignInForm, SignUpForm } from '@/src/ui/modules';
+import { SignInForm, SignUpForm } from '@/ui/modules';
 import { Surface, Tabs } from '@heroui/react';
 import { getTranslations } from 'next-intl/server';
 

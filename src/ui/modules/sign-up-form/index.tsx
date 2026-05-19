@@ -1,7 +1,7 @@
 'use client';
 
 
-import { signUpFormSchema } from '@/src/common/schemas';
+import { signUpFormSchema } from '@/common/schemas';
 import { Button, Form, Input, Label } from '@heroui/react';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useTranslations } from 'next-intl';
