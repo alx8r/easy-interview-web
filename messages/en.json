@@ -24,5 +24,13 @@
   "tabs": {
     "signIn": "Sign In",
     "signUp": "Sign Up"
+  },
+  "modes": {
+    "fast": "fast",
+    "normal": "normal",
+    "hard": "hard"
+  },
+  "pages": {
+    "dashboard": {}
   }
 }

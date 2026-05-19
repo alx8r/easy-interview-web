@@ -6,7 +6,7 @@ export default async function AuthPage() {
   const t = await getTranslations();
 
   return (
-    <div className="min-h-screen flex justify-center items-center bg-background-tertiary">
+    <div className="min-h-screen flex justify-center items-center">
       <Surface className="w-xl min-w-80 rounded-3xl p-6" variant="default">
         <Tabs>
           <Tabs.ListContainer>

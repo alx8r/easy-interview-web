@@ -27,6 +27,7 @@ export default function SignInForm() {
           <Input
             id="sign-in-email"
             {...register('email')}
+            type='email'
             placeholder={t('inputPlaceholders.email')}
           />
           <p className='text-danger text-[11px]'>{errors.email?.message}</p>
@@ -36,6 +37,7 @@ export default function SignInForm() {
           <Input
             id="sign-in-password"
             {...register('password')}
+            type='password'
             placeholder={t('inputPlaceholders.password')}
           />
           <p className='text-danger text-[11px]'>{errors.password?.message}</p>

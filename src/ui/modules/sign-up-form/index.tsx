@@ -1,5 +1,6 @@
 'use client';
 
+
 import { signUpFormSchema } from '@/src/common/schemas';
 import { Button, Form, Input, Label } from '@heroui/react';
 import { yupResolver } from '@hookform/resolvers/yup';
@@ -27,6 +28,7 @@ export default function SignUpForm() {
           <Input
             id="sign-up-email"
             {...register('email')}
+            type="email"
             placeholder={t('inputPlaceholders.email')}
           />
           <p className="text-danger text-[11px]">{errors.email?.message}</p>
@@ -36,6 +38,7 @@ export default function SignUpForm() {
           <Input
             id="sign-up-password"
             {...register('password')}
+            type='password'
             placeholder={t('inputPlaceholders.password')}
           />
           <p className="text-danger text-[11px]">{errors.password?.message}</p>
@@ -45,6 +48,7 @@ export default function SignUpForm() {
           <Input
             id="sign-up-confirm-password"
             {...register('confirmPassword')}
+            type='password'
             placeholder={t('inputPlaceholders.confirmPassword')}
           />
           <p className="text-danger text-[11px]">{errors.confirmPassword?.message}</p>

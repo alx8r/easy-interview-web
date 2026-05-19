@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import {NextIntlClientProvider} from 'next-intl';
+import { NextIntlClientProvider } from 'next-intl';
 import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
 
@@ -25,8 +25,8 @@ interface IProps {
 export default function RootLayout({ children }: Readonly<IProps>) {
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}>
-      <body className="min-h-full flex flex-col">
-        <NextIntlClientProvider>{children}</NextIntlClientProvider>
+      <body className="min-h-full bg-background-tertiary">
+          <NextIntlClientProvider>{children}</NextIntlClientProvider>
       </body>
     </html>
   );
