@@ -10,7 +10,7 @@ import {
   REHYDRATE,
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
-import globalReducer from '@/store/stores/global';
+import globalReducer from '@/redux/stores/global';
 
 export const persistConfig = {
   key: 'root',
