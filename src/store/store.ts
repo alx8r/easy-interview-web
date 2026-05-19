@@ -10,8 +10,7 @@ import {
   REHYDRATE,
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
-import globalReducer from '@/store/slices/global';
-// import { userSlice } from './slices';
+import globalReducer from '@/store/stores/global';
 
 export const persistConfig = {
   key: 'root',

@@ -18,5 +18,3 @@ export const globalSlice = createSlice({
     },
   },
 });
-
-export default globalSlice.reducer;
