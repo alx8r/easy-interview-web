@@ -1,6 +1,6 @@
-import { SignInForm, SignUpForm } from '@/ui/modules';
 import { Surface, Tabs } from '@heroui/react';
 import { getTranslations } from 'next-intl/server';
+import { SignInComponent, SignUpComponent } from './components';
 
 export default async function AuthPage() {
   const t = await getTranslations();
@@ -22,10 +22,10 @@ export default async function AuthPage() {
             </Tabs.List>
           </Tabs.ListContainer>
           <Tabs.Panel className="min-h-75 h-85 pt-4" id="sign-in">
-            <SignInForm />
+            <SignInComponent />
           </Tabs.Panel>
           <Tabs.Panel className="min-h-75 h-85 pt-4" id="sign-up">
-            <SignUpForm />
+            <SignUpComponent />
           </Tabs.Panel>
         </Tabs>
       </Surface>

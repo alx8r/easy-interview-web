@@ -11,7 +11,7 @@ import {
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 import globalReducer from '@/redux/stores/global';
-import signInReducer, { signInService } from '@/redux/stores/signIn';
+import authReducer, { authService } from '@/redux/stores/auth';
 
 export const persistConfig = {
   key: 'root',
@@ -22,11 +22,11 @@ export const persistConfig = {
 
 const reducers = {
   globalReducer,
-  signInReducer,
+  authReducer,
 };
 
 const services = {
-  [signInService.reducerPath]: signInService.reducer,
+  [authService.reducerPath]: authService.reducer,
   //   [leaderboardService.reducerPath]: leaderboardService.reducer,
 };
 
@@ -45,7 +45,7 @@ export const setupStore = () =>
         serializableCheck: {
           ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
         },
-      }).concat(signInService.middleware),
+      }).concat(authService.middleware),
     // .concat(leaderboardService.middleware),
   });
 

@@ -2,8 +2,8 @@
 
 import React from 'react';
 import { Provider } from 'react-redux';
-import { setupPersistor, setupStore } from '@/store/store';
-import { AppStore, PersistorStore } from '@/store/types';
+import { setupPersistor, setupStore } from '@/redux/store';
+import { AppStore, PersistorStore } from '@/redux/types';
 import { PersistGate } from 'redux-persist/integration/react';
 
 const store: AppStore = setupStore();

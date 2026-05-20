@@ -1,17 +1,17 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { signInService } from './service';
+import { authService } from './service';
 import { IState } from './types';
 
 const initialState: IState = {
   isLoading: false,
 };
 
-export const signInSlice = createSlice({
+export const authSlice = createSlice({
   name: 'singInSlice',
   initialState,
   reducers: {},
   extraReducers: (builder) => {
-    const endpoints = [signInService.endpoints.signIn];
+    const endpoints = [authService.endpoints.signIn];
 
     endpoints.forEach((endpoint) => {
       builder
@@ -28,4 +28,4 @@ export const signInSlice = createSlice({
   },
 });
 
-export default signInSlice.reducer;
+export default authSlice.reducer;

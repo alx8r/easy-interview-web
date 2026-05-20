@@ -1,2 +1,2 @@
 export * from './global';
-export * from './signIn';
+export * from './auth';

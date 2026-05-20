@@ -2,9 +2,9 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 import { ApiUrls, defaultHeadres, HttpMethods } from '@/common/api';
 import { SignInRequestDto, SignInResponseDto } from './dtos';
 
-export const signInService = createApi({
-  reducerPath: 'signInService',
-  baseQuery: fetchBaseQuery({ baseUrl: process.env.BASE_URL, prepareHeaders: defaultHeadres }),
+export const authService = createApi({
+  reducerPath: 'authService',
+  baseQuery: fetchBaseQuery({ baseUrl: process.env.NEXT_PUBLIC_API_URL, prepareHeaders: defaultHeadres }),
   endpoints: (build) => ({
     signIn: build.mutation<SignInResponseDto, SignInRequestDto>({
       query: (body: SignInRequestDto) => ({
