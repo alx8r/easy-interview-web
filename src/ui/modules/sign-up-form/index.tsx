@@ -1,6 +1,5 @@
 'use client';
 
-
 import { signUpFormSchema } from '@/common/schemas';
 import { Button, Form, Input, Label } from '@heroui/react';
 import { yupResolver } from '@hookform/resolvers/yup';
@@ -18,10 +17,8 @@ export default function SignUpForm() {
     resolver: yupResolver(signUpFormSchema(t)),
   });
 
-  const onSubmit = (data: unknown) => console.log(data);
-
   return (
-    <Form className="h-full flex flex-col justify-between" onSubmit={handleSubmit(onSubmit)}>
+    <Form className="h-full flex flex-col justify-between" onSubmit={handleSubmit(() => {})}>
       <div className="flex flex-col gap-2">
         <div className="flex flex-col gap-1">
           <Label htmlFor="sign-up-email">{t('inputLabels.email')}</Label>

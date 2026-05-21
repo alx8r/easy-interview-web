@@ -2,17 +2,18 @@
 
 import { SignInFormType } from '@/common/form-types';
 import { signInFormSchema } from '@/common/schemas';
-import { Button, Form, Input, Label } from '@heroui/react';
+import { Button, Form, Input, Label, Spinner } from '@heroui/react';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useTranslations } from 'next-intl';
 import { useForm } from 'react-hook-form';
 
 interface IProps {
+  isLoading: boolean;
   initValues: SignInFormType;
   onSubmit: (values: SignInFormType) => Promise<void>;
 }
 
-export default function SignInForm({ initValues, onSubmit }: IProps) {
+export default function SignInForm({ isLoading, initValues, onSubmit }: IProps) {
   const t = useTranslations();
 
   const {
@@ -49,6 +50,7 @@ export default function SignInForm({ initValues, onSubmit }: IProps) {
         </div>
       </div>
       <Button className="font-bold" fullWidth type="submit">
+        {isLoading ? <Spinner color="current" size="sm" /> : null}
         {t('buttons.signIn')}
       </Button>
     </Form>

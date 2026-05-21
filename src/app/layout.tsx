@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { NextIntlClientProvider } from 'next-intl';
 import { Geist, Geist_Mono } from 'next/font/google';
 import { ReduxProvider } from '@/redux';
+import AlertProvider from '@/app/alert';
 import './globals.css';
 
 const geistSans = Geist({
@@ -28,7 +29,10 @@ export default function RootLayout({ children }: Readonly<IProps>) {
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}>
       <body className="min-h-full bg-background-tertiary">
         <NextIntlClientProvider>
-          <ReduxProvider>{children}</ReduxProvider>
+          <ReduxProvider>
+            {children}
+            <AlertProvider />
+          </ReduxProvider>
         </NextIntlClientProvider>
       </body>
     </html>

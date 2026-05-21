@@ -5,12 +5,13 @@ import { useAppDispatch, useAppSelector } from '@/redux';
 import { authService, globalSlice } from '@/redux/stores';
 import { SignInFormType } from '@/common/form-types';
 import { SignInRequestDto } from '@/redux/stores/auth/dtos';
-import { UpdateUserGlobalStateDto } from '@/redux/stores/global/dtos';
+import { SetupAlertGlobalStateDto, UpdateUserGlobalStateDto } from '@/redux/stores/global/dtos';
+import { errorHandler } from '@/redux/common/error';
 
 export default function SignInComponent() {
   const dispatch = useAppDispatch();
 
-  const { updateUserGlobalState } = globalSlice.actions;
+  const { updateUserGlobalState, setupAlertGlobalState } = globalSlice.actions;
 
   const { isLoading } = useAppSelector((state) => state.authReducer);
 
@@ -38,14 +39,19 @@ export default function SignInComponent() {
     }
 
     if (error) {
-      console.log(error);
-      // const validError = errorHandler(error);
+      const validError = errorHandler(error);
 
-      // const globalAlertStateData = new SetupAlertGlobalStateDto(true, validError.message.message);
+      const globalAlertStateData = new SetupAlertGlobalStateDto(true, validError.message.message);
 
-      // dispatch(setupAlertGlobalState(globalAlertStateData.toSerializable()));
+      dispatch(setupAlertGlobalState(globalAlertStateData.toSerializable()));
     }
   };
 
-  return <SignInForm initValues={signInFormInitValues} onSubmit={signInFormOnSubmit} />;
+  return (
+    <SignInForm
+      isLoading={isLoading}
+      initValues={signInFormInitValues}
+      onSubmit={signInFormOnSubmit}
+    />
+  );
 }
