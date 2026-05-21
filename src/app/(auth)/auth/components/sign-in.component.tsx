@@ -17,12 +17,12 @@ export default function SignInComponent() {
 
   const [signIn] = authService.useSignInMutation();
 
-  const signInFormInitValues: SignInFormType = {
+  const initValues: SignInFormType = {
     email: '',
     password: '',
   };
 
-  const signInFormOnSubmit = async (values: SignInFormType): Promise<void> => {
+  const onSubmit = async (values: SignInFormType): Promise<void> => {
     const body = new SignInRequestDto(values.email, values.password);
 
     const { data, error } = await signIn(body);
@@ -47,11 +47,5 @@ export default function SignInComponent() {
     }
   };
 
-  return (
-    <SignInForm
-      isLoading={isLoading}
-      initValues={signInFormInitValues}
-      onSubmit={signInFormOnSubmit}
-    />
-  );
+  return <SignInForm isLoading={isLoading} initValues={initValues} onSubmit={onSubmit} />;
 }

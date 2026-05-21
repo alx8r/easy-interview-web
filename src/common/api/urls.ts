@@ -8,6 +8,7 @@ export const ApiUrls = {
    */
 
   UserSignIn: `${ApiVersions.V1}/auth/user/sign-in`,
+  UserSignUp: `${ApiVersions.V1}/auth/user/sign-up`,
 
   /*
    *

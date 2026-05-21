@@ -11,7 +11,9 @@ export const authSlice = createSlice({
   initialState,
   reducers: {},
   extraReducers: (builder) => {
-    const endpoints = [authService.endpoints.signIn];
+    const { signIn, signUp } = authService.endpoints;
+
+    const endpoints = [signIn, signUp];
 
     endpoints.forEach((endpoint) => {
       builder
