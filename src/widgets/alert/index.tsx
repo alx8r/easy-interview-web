@@ -5,7 +5,7 @@ import { globalSlice } from '@/redux/stores';
 import { Alert } from '@/ui/components';
 import { useEffect } from 'react';
 
-export default function AlertProvider() {
+export default function AlertWidget() {
   const dispatch = useAppDispatch();
   const { resetAlerGlobalState } = globalSlice.actions;
 

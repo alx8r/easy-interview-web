@@ -8,7 +8,7 @@ import { SignUpRequestDto } from '@/redux/stores/auth/dtos';
 import { SetupAlertGlobalStateDto, UpdateUserGlobalStateDto } from '@/redux/stores/global/dtos';
 import { SignUpForm } from '@/ui/modules';
 
-export default function SignUpComponent() {
+export default function SignUpFormWidget() {
   const dispatch = useAppDispatch();
 
   const { updateUserGlobalState, setupAlertGlobalState } = globalSlice.actions;

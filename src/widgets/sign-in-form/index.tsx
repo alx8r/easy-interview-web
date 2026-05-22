@@ -8,7 +8,7 @@ import { SignInRequestDto } from '@/redux/stores/auth/dtos';
 import { SetupAlertGlobalStateDto, UpdateUserGlobalStateDto } from '@/redux/stores/global/dtos';
 import { errorHandler } from '@/redux/common/error';
 
-export default function SignInComponent() {
+export default function SignInFormWidget() {
   const dispatch = useAppDispatch();
 
   const { updateUserGlobalState, setupAlertGlobalState } = globalSlice.actions;

@@ -22,6 +22,7 @@
       "@/*": ["./src/*"],
       "data/*": ["./src/common/data/*"],
       "redux/*": ["./src/redux/*"],
+      "widgets/*": ["./src/widgets/*"],
       "components/*": ["./src/ui/components/*"],
       "composites/*": ["./src/ui/composites/*"],
       "modules/*": ["./src/ui/modules/*"]

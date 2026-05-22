@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { NextIntlClientProvider } from 'next-intl';
 import { Geist, Geist_Mono } from 'next/font/google';
 import { ReduxProvider } from '@/redux';
-import AlertProvider from '@/app/alert';
+import { AlertWidget } from '@/widgets';
 import './globals.css';
 
 const geistSans = Geist({
@@ -31,7 +31,7 @@ export default function RootLayout({ children }: Readonly<IProps>) {
         <NextIntlClientProvider>
           <ReduxProvider>
             {children}
-            <AlertProvider />
+            <AlertWidget />
           </ReduxProvider>
         </NextIntlClientProvider>
       </body>
