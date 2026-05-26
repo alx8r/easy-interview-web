@@ -1,4 +1,3 @@
-import Alert from './alert';
-import ModeCard from './mode-card';
+import Avatar from './avatar';
 
-export { Alert, ModeCard };
+export { Avatar };

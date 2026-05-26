@@ -5,8 +5,4 @@ export interface IState {
     accessToken: string;
     refreshToken: string;
   };
-  alert: {
-    visible: boolean;
-    message: string | undefined;
-  };
 }

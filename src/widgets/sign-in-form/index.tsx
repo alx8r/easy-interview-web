@@ -5,13 +5,19 @@ import { useAppDispatch, useAppSelector } from '@/redux';
 import { authService, globalSlice } from '@/redux/stores';
 import { SignInFormType } from '@/common/form-types';
 import { SignInRequestDto } from '@/redux/stores/auth/dtos';
-import { SetupAlertGlobalStateDto, UpdateUserGlobalStateDto } from '@/redux/stores/global/dtos';
+import { UpdateUserGlobalStateDto } from '@/redux/stores/global/dtos';
 import { errorHandler } from '@/redux/common/error';
+import { useRouter } from 'next/navigation';
+import { toast } from '@heroui/react';
 
 export default function SignInFormWidget() {
+  const DASHBOARD_PATHNAME = 'dashboard';
+
+  const router = useRouter();
+
   const dispatch = useAppDispatch();
 
-  const { updateUserGlobalState, setupAlertGlobalState } = globalSlice.actions;
+  const { updateUserGlobalState } = globalSlice.actions;
 
   const { isLoading } = useAppSelector((state) => state.authReducer);
 
@@ -36,14 +42,16 @@ export default function SignInFormWidget() {
       );
 
       dispatch(updateUserGlobalState(userGlobalStateData.toSerializable()));
+
+      router.push(DASHBOARD_PATHNAME);
     }
 
     if (error) {
       const validError = errorHandler(error);
 
-      const globalAlertStateData = new SetupAlertGlobalStateDto(true, validError.message.message);
-
-      dispatch(setupAlertGlobalState(globalAlertStateData.toSerializable()));
+      toast.danger(validError.message.error.toString(), {
+        description: validError.message.message,
+      });
     }
   };
 

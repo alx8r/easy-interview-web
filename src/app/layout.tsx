@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import { NextIntlClientProvider } from 'next-intl';
 import { Geist, Geist_Mono } from 'next/font/google';
 import { ReduxProvider } from '@/redux';
-import { AlertWidget } from '@/widgets';
 import './globals.css';
+import { Toast } from '@heroui/react';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -31,7 +31,7 @@ export default function RootLayout({ children }: Readonly<IProps>) {
         <NextIntlClientProvider>
           <ReduxProvider>
             {children}
-            <AlertWidget />
+            <Toast.Provider placement={"top end"} />
           </ReduxProvider>
         </NextIntlClientProvider>
       </body>

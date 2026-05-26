@@ -5,13 +5,14 @@ import { useAppDispatch, useAppSelector } from '@/redux';
 import { errorHandler } from '@/redux/common/error';
 import { authService, globalSlice } from '@/redux/stores';
 import { SignUpRequestDto } from '@/redux/stores/auth/dtos';
-import { SetupAlertGlobalStateDto, UpdateUserGlobalStateDto } from '@/redux/stores/global/dtos';
+import { UpdateUserGlobalStateDto } from '@/redux/stores/global/dtos';
 import { SignUpForm } from '@/ui/modules';
+import { toast } from '@heroui/react';
 
 export default function SignUpFormWidget() {
   const dispatch = useAppDispatch();
 
-  const { updateUserGlobalState, setupAlertGlobalState } = globalSlice.actions;
+  const { updateUserGlobalState } = globalSlice.actions;
 
   const { isLoading } = useAppSelector((state) => state.authReducer);
 
@@ -42,9 +43,9 @@ export default function SignUpFormWidget() {
     if (error) {
       const validError = errorHandler(error);
 
-      const globalAlertStateData = new SetupAlertGlobalStateDto(true, validError.message.message);
-
-      dispatch(setupAlertGlobalState(globalAlertStateData.toSerializable()));
+      toast.danger(validError.message.error.toString(), {
+        description: validError.message.message,
+      });
     }
   };
 

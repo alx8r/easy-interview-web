@@ -36,7 +36,7 @@ export default function SignInForm({ isLoading, initValues, onSubmit }: IProps) 
             type="email"
             placeholder={t('inputPlaceholders.email')}
           />
-          <p className="text-danger text-[11px]">{errors.email?.message}</p>
+          <p className="text-danger text-xs">{errors.email?.message}</p>
         </div>
         <div className="flex flex-col gap-1">
           <Label htmlFor="sign-in-password">{t('inputLabels.password')}</Label>
@@ -46,13 +46,18 @@ export default function SignInForm({ isLoading, initValues, onSubmit }: IProps) 
             type="password"
             placeholder={t('inputPlaceholders.password')}
           />
-          <p className="text-danger text-[11px]">{errors.password?.message}</p>
+          <p className="text-danger text-xs">{errors.password?.message}</p>
         </div>
       </div>
-      <Button className="font-bold" fullWidth type="submit">
-        {isLoading ? <Spinner color="current" size="sm" /> : null}
-        {t('buttons.signIn')}
-      </Button>
+      <div className="flex flex-col gap-2">
+        <Button className="font-bold" fullWidth type="submit">
+          {isLoading ? <Spinner color="current" size="sm" /> : null}
+          {t('buttons.signIn')}
+        </Button>
+        <div className="flex items-center justify-center">
+          <p className="text-xs">Forgot password?</p>
+        </div>
+      </div>
     </Form>
   );
 }

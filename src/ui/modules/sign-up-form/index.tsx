@@ -36,7 +36,7 @@ export default function SignUpForm({ isLoading, initValues, onSubmit }: IProps) 
             type="email"
             placeholder={t('inputPlaceholders.email')}
           />
-          <p className="text-danger text-[11px]">{errors.email?.message}</p>
+          <p className="text-danger text-xs">{errors.email?.message}</p>
         </div>
         <div className="flex flex-col gap-1">
           <Label htmlFor="sign-up-password">{t('inputLabels.password')}</Label>
@@ -46,7 +46,7 @@ export default function SignUpForm({ isLoading, initValues, onSubmit }: IProps) 
             type="password"
             placeholder={t('inputPlaceholders.password')}
           />
-          <p className="text-danger text-[11px]">{errors.password?.message}</p>
+          <p className="text-danger text-xs">{errors.password?.message}</p>
         </div>
         <div className="flex flex-col gap-1">
           <Label htmlFor="sign-up-confirm-password">{t('inputLabels.confirmPassword')}</Label>
@@ -56,7 +56,7 @@ export default function SignUpForm({ isLoading, initValues, onSubmit }: IProps) 
             type="password"
             placeholder={t('inputPlaceholders.confirmPassword')}
           />
-          <p className="text-danger text-[11px]">{errors.confirmPassword?.message}</p>
+          <p className="text-danger text-xs">{errors.confirmPassword?.message}</p>
         </div>
       </div>
       <Button className="font-bold" fullWidth type="submit">
