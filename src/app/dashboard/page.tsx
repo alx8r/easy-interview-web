@@ -5,7 +5,7 @@ import { Card, Chip, Surface } from '@heroui/react';
 export default function Dashboard() {
   return (
     <div className="min-h-screen flex flex-col">
-      <Surface className="flex min-w-[320px] flex-col gap-3 rounded-3xl mt-4 p-6" variant="default">
+      <Surface className="flex min-w-[320px] flex-col gap-3 rounded-3xl mt-4 p-6" variant="secondary">
         <div className="flex">
           <Chip size={'lg'} variant={'soft'} color={'accent'}>
             <Chip.Label className="font-bold">Backend</Chip.Label>

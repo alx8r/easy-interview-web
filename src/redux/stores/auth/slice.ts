@@ -1,33 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { authService } from './service';
-import { IState } from './types';
 
-const initialState: IState = {
-  isLoading: false,
-};
 
 export const authSlice = createSlice({
-  name: 'singInSlice',
-  initialState,
+  name: 'authSlice',
+  initialState: null,
   reducers: {},
-  extraReducers: (builder) => {
-    const { signIn, signUp } = authService.endpoints;
-
-    const endpoints = [signIn, signUp];
-
-    endpoints.forEach((endpoint) => {
-      builder
-        .addMatcher(endpoint.matchPending, (state) => {
-          state.isLoading = true;
-        })
-        .addMatcher(endpoint.matchFulfilled, (state) => {
-          state.isLoading = false;
-        })
-        .addMatcher(endpoint.matchRejected, (state) => {
-          state.isLoading = false;
-        });
-    });
-  },
 });
 
 export default authSlice.reducer;

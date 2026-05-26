@@ -1,7 +1,7 @@
 'use client';
 
 import { SignInForm } from '@/ui/modules';
-import { useAppDispatch, useAppSelector } from '@/redux';
+import { useAppDispatch } from '@/redux';
 import { authService, globalSlice } from '@/redux/stores';
 import { SignInFormType } from '@/common/form-types';
 import { SignInRequestDto } from '@/redux/stores/auth/dtos';
@@ -19,9 +19,7 @@ export default function SignInFormWidget() {
 
   const { updateUserGlobalState } = globalSlice.actions;
 
-  const { isLoading } = useAppSelector((state) => state.authReducer);
-
-  const [signIn] = authService.useSignInMutation();
+  const [signIn, { isLoading }] = authService.useSignInMutation();
 
   const initValues: SignInFormType = {
     email: '',

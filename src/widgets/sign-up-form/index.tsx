@@ -1,7 +1,7 @@
 'use client';
 
 import { SignUpFormType } from '@/common/form-types';
-import { useAppDispatch, useAppSelector } from '@/redux';
+import { useAppDispatch } from '@/redux';
 import { errorHandler } from '@/redux/common/error';
 import { authService, globalSlice } from '@/redux/stores';
 import { SignUpRequestDto } from '@/redux/stores/auth/dtos';
@@ -14,9 +14,7 @@ export default function SignUpFormWidget() {
 
   const { updateUserGlobalState } = globalSlice.actions;
 
-  const { isLoading } = useAppSelector((state) => state.authReducer);
-
-  const [signUp] = authService.useSignUpMutation();
+  const [signUp, { isLoading }] = authService.useSignUpMutation();
 
   const initValues: SignUpFormType = {
     email: '',

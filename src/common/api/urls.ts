@@ -12,8 +12,8 @@ export const ApiUrls = {
 
   /*
    *
-   * Leaderbord methods
+   * Sections methods
    *
    */
-  FindLeaderboardUsers: `${ApiVersions.V1}/leaderboard`,
+  FindManySections: `${ApiVersions.V1}/sections`,
 };
