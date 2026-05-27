@@ -1,3 +1,4 @@
 import Avatar from './avatar';
+import TopicCard from './topic-card';
 
-export { Avatar };
+export { Avatar, TopicCard };

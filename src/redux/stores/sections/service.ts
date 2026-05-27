@@ -9,7 +9,7 @@ export const sectionsService = createApi({
     prepareHeaders: defaultHeadres,
   }),
   endpoints: (build) => ({
-    findManyPreview: build.query<SectionsResponseDto[], void>({
+    findManySections: build.query<SectionsResponseDto[], void>({
       query: () => ({
         url: ApiUrls.FindManySections,
         method: HttpMethods.GET,
