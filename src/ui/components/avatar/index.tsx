@@ -4,11 +4,12 @@ interface IProps {
   alt: string;
   src: string;
   fallback: string;
+  onClick: () => void;
 }
 
-export default function Avatar({ alt, src, fallback }: IProps) {
+export default function Avatar({ alt, src, fallback, onClick }: IProps) {
   return (
-    <HeroUIAvatar>
+    <HeroUIAvatar onClick={onClick}>
       <HeroUIAvatar.Image alt={alt} src={src} />
       <HeroUIAvatar.Fallback>{fallback}</HeroUIAvatar.Fallback>
     </HeroUIAvatar>

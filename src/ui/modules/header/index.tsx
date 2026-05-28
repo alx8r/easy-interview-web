@@ -9,6 +9,7 @@ interface IProps {
   avatarFallback: string;
   onSignInClick: () => void;
   onSignUpClick: () => void;
+  onAvatarClick: () => void;
 }
 
 export default function Header({
@@ -18,6 +19,7 @@ export default function Header({
   avatarFallback,
   onSignInClick,
   onSignUpClick,
+  onAvatarClick,
 }: IProps) {
   const t = useTranslations();
 
@@ -29,7 +31,12 @@ export default function Header({
       <h1 className="text-base font-semibold text-foreground">EasyQuestions</h1>
 
       {isAuthorized ? (
-        <Avatar alt={avatartAlt} src={avatarSrc} fallback={avatarFallback} />
+        <Avatar
+          alt={avatartAlt}
+          src={avatarSrc}
+          fallback={avatarFallback}
+          onClick={onAvatarClick}
+        />
       ) : (
         <div className="flex gap-2">
           <Button variant="outline" onClick={onSignInClick}>

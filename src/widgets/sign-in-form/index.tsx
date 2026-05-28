@@ -41,7 +41,7 @@ export default function SignInFormWidget() {
 
       dispatch(updateUserGlobalState(userGlobalStateData.toSerializable()));
 
-      router.push(DASHBOARD_PATHNAME);
+      router.push(`/${DASHBOARD_PATHNAME}`);
     }
 
     if (error) {

@@ -8,14 +8,12 @@ import { useTranslations } from 'next-intl';
 import { useEffect, useState } from 'react';
 import { AuthTabsEnum } from '@/common/enums';
 import { useAppSelector } from '@/redux';
+import { Paths } from '@/common/data/paths';
 
 export default function AuthTabsWidget() {
   const t = useTranslations();
 
   const router = useRouter();
-
-  const CURRENT_PATHNAME = 'auth';
-  const DASHBOARD_PATHNAME = 'dashboard';
 
   const searchParams = useSearchParams();
   const actionParam = searchParams.get('action');
@@ -28,14 +26,14 @@ export default function AuthTabsWidget() {
 
   useEffect(() => {
     if (user) {
-      router.push(`${DASHBOARD_PATHNAME}`);
+      router.push(`/${Paths.Home}`);
     }
 
     if (!actionParam || !Object.values(AuthTabsEnum).includes(actionParam as AuthTabsEnum)) {
       const params = new URLSearchParams();
       params.set('action', AuthTabsEnum.SignIn);
 
-      router.push(`${CURRENT_PATHNAME}?${params.toString()}`);
+      router.push(`/${Paths.Auth}?${params.toString()}`);
     }
   }, [user, actionParam, router]);
 
@@ -43,7 +41,7 @@ export default function AuthTabsWidget() {
     const params = new URLSearchParams();
     params.set('action', value as AuthTabsEnum);
 
-    router.replace(`${CURRENT_PATHNAME}?${params.toString()}`);
+    router.replace(`${Paths.Auth}?${params.toString()}`);
 
     setActiveTab(value as AuthTabsEnum);
   };

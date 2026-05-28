@@ -4,11 +4,10 @@ import { useRouter } from 'next/navigation';
 import { useAppSelector } from '@/redux';
 import { Header } from '@/ui/modules';
 import { AuthTabsEnum } from '@/common/enums';
+import { Paths } from '@/common/data/paths';
 
 export default function HeaderWidget() {
   const router = useRouter();
-
-  const AUTH_PATHNAME = 'auth';
 
   const { user } = useAppSelector((state) => state.globalReducer);
 
@@ -16,14 +15,20 @@ export default function HeaderWidget() {
     const params = new URLSearchParams();
     params.set('action', AuthTabsEnum.SignIn);
 
-    router.push(`${AUTH_PATHNAME}?${params.toString()}`);
+    router.push(`/${Paths.Auth}?${params.toString()}`);
   };
 
   const onSignUpClick = (): void => {
     const params = new URLSearchParams();
     params.set('action', AuthTabsEnum.SingUp);
 
-    router.push(`${AUTH_PATHNAME}?${params.toString()}`);
+    router.push(`/${Paths.Auth}?${params.toString()}`);
+  };
+
+  const onAvatarClick = (): void => {
+    if (user) {
+      router.push( `/${Paths.Profile}/${user.id}`);
+    }
   };
 
   return (
@@ -34,6 +39,7 @@ export default function HeaderWidget() {
       avatarFallback={''}
       onSignInClick={onSignInClick}
       onSignUpClick={onSignUpClick}
+      onAvatarClick={onAvatarClick}
     />
   );
 }
