@@ -1,6 +1,9 @@
+import Image from 'next/image';
+import Link from 'next/link';
 import { Avatar } from '@/ui/components';
 import { Button, Surface } from '@heroui/react';
 import { useTranslations } from 'next-intl';
+import { Paths } from '@/common/data/paths';
 
 interface IProps {
   isAuthorized: boolean;
@@ -28,15 +31,19 @@ export default function Header({
       className="min-w-[320px] flex justify-between items-center rounded-2xl p-4 mt-3"
       variant="default"
     >
-      <h1 className="text-base font-semibold text-foreground">EasyQuestions</h1>
+      <Link href={`/${Paths.Home}`}>
+        <Image src="/logo.svg" alt="InInterview" width={168} height={50} loading="eager" />
+      </Link>
 
       {isAuthorized ? (
-        <Avatar
-          alt={avatartAlt}
-          src={avatarSrc}
-          fallback={avatarFallback}
-          onClick={onAvatarClick}
-        />
+        <div className="cursor-pointer">
+          <Avatar
+            alt={avatartAlt}
+            src={avatarSrc}
+            fallback={avatarFallback}
+            onClick={onAvatarClick}
+          />
+        </div>
       ) : (
         <div className="flex gap-2">
           <Button variant="outline" onClick={onSignInClick}>

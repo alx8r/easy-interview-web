@@ -4,15 +4,31 @@ import { Button, Form, Input, Label, Spinner, Surface, Tabs } from '@heroui/reac
 import { ArrowRightFromSquare } from '@gravity-ui/icons';
 import { register } from 'module';
 import { useTranslations } from 'next-intl';
+import { useAppDispatch } from '@/redux';
+import { globalSlice } from '@/redux/stores';
+import { Paths } from '@/common/data/paths';
+import { useRouter } from 'next/navigation';
 
 export default function Profile() {
   const t = useTranslations();
+
+  const router = useRouter();
+
+  const dispatch = useAppDispatch();
+
+  const { resetUserGlobalState } = globalSlice.actions;
+
+  const onLogoutClick = () => {
+    dispatch(resetUserGlobalState());
+
+    router.push(`/${Paths.Auth}`);
+  };
 
   return (
     <Surface className="flex min-w-[320px] flex-col gap-3 rounded-3xl mt-4 p-6" variant="default">
       <Tabs className="w-full" orientation="horizontal">
         <div className="flex justify-between items-center">
-          <Tabs.ListContainer className='w-full max-w-lg'>
+          <Tabs.ListContainer className="w-full max-w-lg">
             <Tabs.List aria-label="Vertical tabs">
               <Tabs.Tab id="account">
                 Account
@@ -24,7 +40,7 @@ export default function Profile() {
               </Tabs.Tab>
             </Tabs.List>
           </Tabs.ListContainer>
-          <Button variant="danger">
+          <Button variant="danger" onClick={onLogoutClick}>
             <ArrowRightFromSquare />
             Logout
           </Button>
