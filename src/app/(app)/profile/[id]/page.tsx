@@ -1,28 +1,9 @@
-'use client';
-
 import { Button, Form, Input, Label, Spinner, Surface, Tabs } from '@heroui/react';
-import { ArrowRightFromSquare } from '@gravity-ui/icons';
-import { register } from 'module';
-import { useTranslations } from 'next-intl';
-import { useAppDispatch } from '@/redux';
-import { globalSlice } from '@/redux/stores';
-import { Paths } from '@/common/data/paths';
-import { useRouter } from 'next/navigation';
+import { getTranslations } from 'next-intl/server';
+import { LogoutButtonWidget } from '@/widgets';
 
-export default function Profile() {
-  const t = useTranslations();
-
-  const router = useRouter();
-
-  const dispatch = useAppDispatch();
-
-  const { resetUserGlobalState } = globalSlice.actions;
-
-  const onLogoutClick = () => {
-    dispatch(resetUserGlobalState());
-
-    router.push(`/${Paths.Auth}`);
-  };
+export default async function Profile() {
+  const t = await getTranslations();
 
   return (
     <Surface className="flex min-w-[320px] flex-col gap-3 rounded-3xl mt-4 p-6" variant="default">
@@ -31,22 +12,19 @@ export default function Profile() {
           <Tabs.ListContainer className="w-full max-w-lg">
             <Tabs.List aria-label="Vertical tabs">
               <Tabs.Tab id="account">
-                Account
+                {t('tabs.account')}
                 <Tabs.Indicator />
               </Tabs.Tab>
               <Tabs.Tab id="security">
-                Security
+                {t('tabs.security')}
                 <Tabs.Indicator />
               </Tabs.Tab>
             </Tabs.List>
           </Tabs.ListContainer>
-          <Button variant="danger" onClick={onLogoutClick}>
-            <ArrowRightFromSquare />
-            Logout
-          </Button>
+          <LogoutButtonWidget />
         </div>
         <Tabs.Panel className="px-4" id="account">
-          <Form className="h-full flex flex-col justify-between" onSubmit={() => {}}>
+          <Form className="h-full flex flex-col justify-between">
             <div className="flex flex-col gap-2">
               <div className="flex flex-col gap-1">
                 <Label htmlFor="sign-in-email">{t('inputLabels.email')}</Label>

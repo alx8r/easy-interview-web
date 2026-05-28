@@ -15,15 +15,21 @@
     "passwordIsRequired": "Password is required",
     "passwordMin": "Password min length is {min} symboles",
     "confirmPasswordIsRequired": "Confirm password is required",
-    "passwordsMustMatch": "Passwords must match"
+    "passwordsMustMatch": "Passwords must match",
+    "firstNameIsRequired": "First name is required",
+    "lastNameIsRequired": "Last name is required"
   },
   "buttons": {
     "signIn": "Sign In",
-    "signUp": "Sign Up"
+    "signUp": "Sign Up",
+    "logout": "Logout",
+    "save": "Save"
   },
   "tabs": {
     "signIn": "Sign In",
-    "signUp": "Sign Up"
+    "signUp": "Sign Up",
+    "account": "Account",
+    "security": "Security"
   },
   "modes": {
     "fast": "fast",
