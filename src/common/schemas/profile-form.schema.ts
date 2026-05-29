@@ -1,7 +1,7 @@
 import { TFunction } from '@//i18n/types';
 import * as yup from 'yup';
 
-export const signInFormSchema = (t: TFunction) =>
+export const profileFormSchema = (t: TFunction) =>
   yup
     .object({
       firstName: yup

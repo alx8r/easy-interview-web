@@ -1,6 +1,6 @@
-import { Button, Form, Input, Label, Spinner, Surface, Tabs } from '@heroui/react';
+import { Chip, Surface, Tabs } from '@heroui/react';
 import { getTranslations } from 'next-intl/server';
-import { LogoutButtonWidget } from '@/widgets';
+import { EmailFormWidget, LogoutButtonWidget, ProfileFormWidget } from '@/widgets';
 
 export default async function Profile() {
   const t = await getTranslations();
@@ -23,43 +23,37 @@ export default async function Profile() {
           </Tabs.ListContainer>
           <LogoutButtonWidget />
         </div>
-        <Tabs.Panel className="px-4" id="account">
-          <Form className="h-full flex flex-col justify-between">
-            <div className="flex flex-col gap-2">
-              <div className="flex flex-col gap-1">
-                <Label htmlFor="sign-in-email">{t('inputLabels.email')}</Label>
-                <Input
-                  id="sign-in-email"
-                  // {...register('email')}
-                  type="email"
-                  placeholder={t('inputPlaceholders.email')}
-                />
-                {/* <p className="text-danger text-xs">{errors.email?.message}</p> */}
-              </div>
-              <div className="flex flex-col gap-1">
-                <Label htmlFor="sign-in-password">{t('inputLabels.password')}</Label>
-                <Input
-                  id="sign-in-password"
-                  // {...register('password')}
-                  type="password"
-                  placeholder={t('inputPlaceholders.password')}
-                />
-                {/* <p className="text-danger text-xs">{errors.password?.message}</p> */}
+        <Tabs.Panel className="p-0" id="account">
+          <div className="flex gap-5 mt-4">
+            <div className="w-[calc(50%-20px)]">
+              <Chip size={'lg'} variant={'soft'} color={'accent'}>
+                <Chip.Label className="font-bold">{t('chips.account')}</Chip.Label>
+              </Chip>
+              <div className="mt-4 mx-2">
+                <ProfileFormWidget />
               </div>
             </div>
-            <div className="flex flex-col gap-2">
-              <Button className="font-bold" fullWidth type="submit">
-                <Spinner color="current" size="sm" />
-                {t('buttons.signIn')}
-              </Button>
+            <div className="w-[calc(50%-20px)]">
+              <Chip size={'lg'} variant={'soft'} color={'accent'}>
+                <Chip.Label className="font-bold">{t('chips.email')}</Chip.Label>
+              </Chip>
+              <div className="mt-4 mx-2">
+                <EmailFormWidget />
+              </div>
             </div>
-          </Form>
+          </div>
         </Tabs.Panel>
-        <Tabs.Panel className="px-4" id="security">
-          <h3 className="mb-2 font-semibold">Security Settings</h3>
-          <p className="text-sm text-muted">
-            Configure two-factor authentication and password settings.
-          </p>
+        <Tabs.Panel className="p-0" id="security">
+          <div className="flex gap-5 mt-4">
+            <div className="w-[calc(50%-20px)]">
+              <Chip size={'lg'} variant={'soft'} color={'accent'}>
+                <Chip.Label className="font-bold">{t('chips.changePassword')}</Chip.Label>
+              </Chip>
+              <div className="mt-4 mx-2">
+                <p>Change password!!</p>
+              </div>
+            </div>
+          </div>
         </Tabs.Panel>
       </Tabs>
     </Surface>

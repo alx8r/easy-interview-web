@@ -2,12 +2,16 @@
   "inputLabels": {
     "email": "Email",
     "password": "Password",
-    "confirmPassword": "Confirm password"
+    "confirmPassword": "Confirm password",
+    "firstName": "First name",
+    "lastName": "Last name"
   },
   "inputPlaceholders": {
     "email": "Enter your email",
     "password": "Enter password",
-    "confirmPassword": "Confirm password"
+    "confirmPassword": "Confirm password",
+    "firstName": "Enter first name",
+    "lastName": "Enter last name"
   },
   "inputErrors": {
     "emailIsRequired": "Email is required",
@@ -23,7 +27,7 @@
     "signIn": "Sign In",
     "signUp": "Sign Up",
     "logout": "Logout",
-    "save": "Save"
+    "update": "Update"
   },
   "tabs": {
     "signIn": "Sign In",
@@ -31,10 +35,10 @@
     "account": "Account",
     "security": "Security"
   },
-  "modes": {
-    "fast": "fast",
-    "normal": "normal",
-    "hard": "hard"
+  "chips": {
+    "account": "Account",
+    "email": "Email",
+    "changePassword": "Change password"
   },
   "pages": {
     "dashboard": {}

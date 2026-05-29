@@ -4,6 +4,8 @@ import HeaderWidget from './header';
 import AuthTabsWidget from './auth-tabs';
 import SectionsWidget from './sections';
 import LogoutButtonWidget from './logout-button';
+import EmailFormWidget from './email-form';
+import ProfileFormWidget from './profile-form';
 
 export {
   SignInFormWidget,
@@ -12,4 +14,6 @@ export {
   AuthTabsWidget,
   SectionsWidget,
   LogoutButtonWidget,
+  EmailFormWidget,
+  ProfileFormWidget,
 };

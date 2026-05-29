@@ -1,4 +1,4 @@
 export type ProfileFormType = {
-  firtName: string;
+  firstName: string;
   lastName: string;
 };
